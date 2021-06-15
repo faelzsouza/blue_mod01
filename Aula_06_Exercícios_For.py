@@ -46,8 +46,12 @@ acordo com o intervalo passado."""
 # fim = int(input("Fim: "))
 # intervalo = int(input("Intervalo: "))
 
-# for n in range(inicio, fim + 1, intervalo):
-#     print(n, end=" ")
+# if inicio > fim:
+#     for n in range(inicio, fim - 1, -intervalo):
+#         print(n, end=" ")
+# else:
+#     for n in range(inicio, fim + 1, intervalo):
+#         print(n, end=" ")
 
 """04 - Desenvolva um código em que o usuário vai entrar vários números e no final vai apresentar a 
 soma deles (o usuário vai dizer quantos números serão informados antes de começar)"""
