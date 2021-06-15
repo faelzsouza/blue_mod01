@@ -131,5 +131,3 @@ while c <= n:
 
 print(f"O(s) número(s) primo(s) de 1 a {n} é(são):")
 print(f"{primos.strip()}\n\nDivisões realizadas: {divisoes}")
-
- 
