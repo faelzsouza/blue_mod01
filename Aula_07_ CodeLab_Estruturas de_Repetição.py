@@ -75,52 +75,48 @@ Seu programa deverá realizar a operação solicitada em cada caso. (utilizar wh
 sem break)
 """
 
-flag1 = True
-flag2 = True
-tracos = '=-=' * 8
-while flag1:
-    flag1 = True
-    flag2 = True
-    print(tracos)
-    n1 = float(input("Digite um número: "))
-    n2 = float(input("Digite outro número: "))
-    soma = n1 + n2
-    mult = n1 * n2
-    maior = 0
-    while flag2:
-        print("""
-[ 1 ] somar
-[ 2 ] multiplicar
-[ 3 ] maior
-[ 4 ] novos números
-[ 5 ] sair do programa
-        """)
-        acao = int(input('Qual ação acima deseja executar?\n'))
-        if acao == 1:
-            print(f'\n{n1} + {n2} = {soma}')
-            print(tracos)
-        elif acao == 2:
-            print(f'\n{n1} x {n2} = {mult}')
-            print(tracos)
-        elif acao == 3:
-            if n1 > n2:
-                maior = n1
-            else:
-                maior = n2
-            print(f'\nO maior número é o {maior}')
-            print(tracos)
-        elif acao == 4:
-            flag2 = False
-        elif acao == 5:
-            print(tracos)
-            print(" Programa Encerrado :D")
-            print(tracos)
-            flag2 = False
-            flag1 = False
-
-
-        
-
+# flag1 = True
+# flag2 = True
+# tracos = '=-=' * 8
+# while flag1:
+#     flag1 = True
+#     flag2 = True
+#     print(tracos)
+#     n1 = float(input("Digite um número: "))
+#     n2 = float(input("Digite outro número: "))
+#     soma = n1 + n2
+#     mult = n1 * n2
+#     maior = 0
+#     while flag2:
+#         print("""
+# [ 1 ] somar
+# [ 2 ] multiplicar
+# [ 3 ] maior
+# [ 4 ] novos números
+# [ 5 ] sair do programa
+#         """)
+#         acao = int(input('Qual ação acima deseja executar?\n'))
+#         if acao == 1:
+#             print(f'\n{n1} + {n2} = {soma}')
+#             print(tracos)
+#         elif acao == 2:
+#             print(f'\n{n1} x {n2} = {mult}')
+#             print(tracos)
+#         elif acao == 3:
+#             if n1 > n2:
+#                 maior = n1
+#             else:
+#                 maior = n2
+#             print(f'\nO maior número é o {maior}')
+#             print(tracos)
+#         elif acao == 4:
+#             flag2 = False
+#         elif acao == 5:
+#             print(tracos)
+#             print(" Programa Encerrado :D")
+#             print(tracos)
+#             flag2 = False
+#             flag1 = False
 
 """
 #02 - Crie um programa que leia a idade e o sexo de várias pessoas. A cada
@@ -129,14 +125,21 @@ continuar. No final, mostre:
 A) Quantas pessoas têm mais de 18 anos.
 B) Quantos homens foram cadastrados.
 C) Quantas mulheres têm menos de 20 anos.
+"""
+"""
 #03 - Crie um programa que leia o nome e o preço de vários produtos. O programa
 deverá perguntar se o usuário vai continuar ou não. No final, mostre:
 A) Qual é o total gasto na compra.
 B) Quantos produtos custam mais de R$1000.
-(C) Qual é o nome do produto mais barato.#04 (DESAFIO) Crie um jogo onde o computador vai “pensar” em um número entre
+(C) Qual é o nome do produto mais barato.
+"""
+"""
+#04 (DESAFIO) Crie um jogo onde o computador vai “pensar” em um número entre
 0 e 10. O jogador vai tentar adivinhar qual número foi escolhido até acertar, entre os
 palpites diga ao jogador se o número do computador é maior ou menor ao que ele
 digitou,no final mostre quantos palpites foram necessários para vencer.
+"""
+"""
 #05 (DESAFIO) Em uma eleição presidencial existem quatro candidatos. Os votos
 são informados por meio de código.
 Os códigos utilizados são:
@@ -150,5 +153,92 @@ O total de votos nulos;
 O total de votos em branco;
 A percentagem de votos nulos sobre o total de votos;
 A percentagem de votos em branco sobre o total de votos
-
 """
+flag = True
+ze = 1
+maria = 2
+joao = 3
+tereza = 4
+nulo = 5
+branco = 6
+vZe = 0
+vMaria = 0
+vJoao = 0
+vTereza = 0
+vNulo = 0
+vBranco = 0
+vTotal = 0
+mensagemVoto = "Obrigado pelo seu voto!"
+mensagemEncerra = "Voto encerrado!"
+
+while flag:
+    sn = input("\nVocê deseja votar? ")
+    while True:
+        if sn[0].lower() == "s":
+            print("""
+=-=-=-=-=-=-=-=-=-=-=
+[1] - Zé
+[2] - Maria
+[3] - João
+[4] - Tereza
+[5] - Voto Nulo
+[6] - Voto em Branco
+=-=-=-=-=-=-=-=-=-=-=""")
+            voto = int(input("Qual é o seu voto? "))
+            if voto == ze:
+                vZe += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            elif voto == maria:
+                vMaria += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            elif voto == joao:
+                vJoao += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            elif voto == tereza:
+                vTereza += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            elif voto == nulo:
+                vNulo += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            elif voto == branco:
+                vBranco += 1
+                vTotal += 1
+                print(mensagemVoto)
+                break
+            else:
+                print("""
+=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=
+Digite o número correspondente ao seu voto!
+=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=x=""")
+        elif sn[0].lower() == "n":
+            print(mensagemEncerra, "\n")
+            flag = False
+            break
+        else:
+            print("""=-=-=-=-=-=-=-=-=-=-=-=-
+Digite uma opção válida!
+=-=-=-=-=-=-=-=-=-=-=-=-""")
+
+percNulo = vNulo * vTotal / 100
+percBranco = vBranco * vTotal / 100
+
+print(f'''------------------
+APURAÇÃO DOS VOTOS
+------------------
+Zé - {vZe} voto(s)
+Maria - {vMaria} voto(s)
+João - {vJoao} voto(s)
+Tereza - {vTereza} voto(s)
+Voto Nulo - {vNulo} voto(s) = {percNulo:.2f}%
+Voto em Branco - {vBranco} voto(s) = {percBranco:.2f}%
+''')
