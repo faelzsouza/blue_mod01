@@ -126,6 +126,37 @@ A) Quantas pessoas têm mais de 18 anos.
 B) Quantos homens foram cadastrados.
 C) Quantas mulheres têm menos de 20 anos.
 """
+
+# maiores18 = 0
+# homem = 0
+# mulherMenor20 = 0
+# while True:
+#   idade = int(input("Qual é a idade?\n"))
+#   sexo = input("Qual é o sexo? [F/M]\n").lower().strip()[0]
+#   if idade > 18: maiores18 += 1
+#   if sexo == "m": homem += 1
+#   if idade < 20 and sexo == "f": mulherMenor20 += 1
+#   while True:
+#     resp = input("Deseja continuar cadastrando? [S/N] ").lower().strip()[0]
+#     if resp == "n":
+#       print()
+#       if maiores18 > 1: 
+#         print(f"Foram cadastradas {maiores18} pessoas maiores de 18 anos.")
+#       else:
+#         print(f"Foi cadastrada {maiores18} pessoa maior de 18 anos.")
+#       if homem > 1:
+#         print(f"Foram cadastrados {homem} homens.")
+#       else:
+#         print(f"Foi cadastrado {homem} homem.")
+#       if mulherMenor20 > 1:
+#         print(f"Foram cadastradas {mulherMenor20} mulheres que tem menos de 20 anos.")
+#       else:
+#         print(f"Foi cadastrada {mulherMenor20} mulher que tem menos de 20 anos.")
+#       break
+#     else:
+#       print("Opção Inválida!!")
+#   break
+
 """
 #03 - Crie um programa que leia o nome e o preço de vários produtos. O programa
 deverá perguntar se o usuário vai continuar ou não. No final, mostre:
@@ -133,12 +164,25 @@ A) Qual é o total gasto na compra.
 B) Quantos produtos custam mais de R$1000.
 (C) Qual é o nome do produto mais barato.
 """
+totalCompra = 0
+produtoMaiorQueMil = 0
+produtoBarato = ""
+while True:
+    nomeProd = input('Nome do produto: ')
+    precoProd = float(input("Preço do produto: "))
+    totalCompra += precoProd
+    
+
+
 """
 #04 (DESAFIO) Crie um jogo onde o computador vai “pensar” em um número entre
 0 e 10. O jogador vai tentar adivinhar qual número foi escolhido até acertar, entre os
 palpites diga ao jogador se o número do computador é maior ou menor ao que ele
 digitou,no final mostre quantos palpites foram necessários para vencer.
 """
+
+
+
 """
 #05 (DESAFIO) Em uma eleição presidencial existem quatro candidatos. Os votos
 são informados por meio de código.
