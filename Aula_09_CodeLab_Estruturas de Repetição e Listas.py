@@ -75,14 +75,10 @@ números entre 1 e 60 para cada jogo, cadastrando tudo em uma lista composta.
 # print()
 # for q in range(quantidadeJogos):
 #     listaPalpite = []
-#     for n in range(6):
-#         while True:
-#             numero = randint(1, 60)
-#             if numero in listaPalpite:
-#                 pass
-#             else:
-#                 listaPalpite.append(numero)
-#                 break
+#     while len(listaPalpite) < 6:
+#         numero = randint(1, 60)
+#         if numero not in listaPalpite:
+#             listaPalpite.append(numero)
 #     listaPrincipal.append(listaPalpite)
 
 # cont = 0
@@ -90,4 +86,4 @@ números entre 1 e 60 para cada jogo, cadastrando tudo em uma lista composta.
 #     cont += 1
 #     print(f'Jogo {cont}: {jogo}')
 
-# print("\nBoa sorte!!!")
+# print("\nBoa sorte!!!\n")

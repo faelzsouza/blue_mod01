@@ -62,25 +62,74 @@ escolherá uma aleatoriamente. O jogador poderá errar 6 vezes antes de ser enfo
 """
 
 from random import randint
+from time import sleep
 palavras = ["prego", "luva", "abacate", "caneca", "sorvete"]
 palavraSorteada = palavras[randint(0, len(palavras) - 1)]
-word = "AMAR"
 tracoPalavraSorteada = []
-for l in word:
+
+# Cria uma lista com a quantidade de "_" igual a quantidade de letras da palavra sorteada
+for l in palavraSorteada:
     tracoPalavraSorteada.append("_")
 
-erros = []
+errosLista = []
+erros = 6
+forca = ""
+print(f"A palavra tem {len(palavraSorteada)} letras")
+while erros > 0:
+    # A forca ocorre enquanto houver "_" na variável tracoPalavraSorteada
+    while "_" in tracoPalavraSorteada:
+        chute = input("Qual é o chute? ")
+        sleep(0.7)
+        # Para cada letra de chute 
+        for lchute in chute:
+            # Verifica se letra de chute já está na lista de erros
+            if lchute in errosLista:
+                print(f"Você já tentou essa letra!")
+                print(f"Você já tentou {str(errosLista).upper()}")                
+            # Verifica se a letra de chute está na palavra sorteada
+            elif lchute in palavraSorteada:
+                # Para cada letra de palavra sorteada
+                for i, l in enumerate(palavraSorteada):
+                    # Verifica se a letra da palavra sorteada é igual a letra do chute 
+                    if l == lchute:
+                        # Altera o underscore de posição igual ao da letra da palavra sorteada pela letra da palavra sorteada
+                        tracoPalavraSorteada[i] = lchute
+            else:
+                # Se não tiver a letra de chute na palavra sorteada
+                print(f"\nNa palavra não tem {lchute.upper()}!")
+                errosLista.append(lchute)
+                erros -= 1
+                print(f"Ainda restam {erros} tentativas!")
+                print(f"Você já errou {str(errosLista).upper()}")
+                # Alternando a carinha de acordo vai errando
+                if erros == 5:
+                    forca = "😀"
+                elif erros == 4:
+                    forca = "🙂"
+                elif erros == 3:
+                    forca = "😶"
+                elif erros == 2:
+                    forca = "😐"
+                elif erros == 1:
+                    forca = "😫"
+                print(forca)
 
-while "_" in tracoPalavraSorteada:
-    index = 0
-    chute = input("Qual é o chute? ")
-    if chute in word:
-        for l in word:
-            if l == chute:
-                tracoPalavraSorteada[index] = chute
-            index += 1
-    for l in tracoPalavraSorteada:
-        print(l, end="")
+        print()
 
-for l in tracoPalavraSorteada:
-    print(l, end="")
+        # Printa a lista em forma de palavra
+        for l in tracoPalavraSorteada:
+            print(l.upper(), end="")
+        print("\n")
+        # Quando erra as 6 vezes printa mensagem final e dá break
+        if erros == 0:
+            forca = "💀"
+            print(forca)
+            print(f"\nNão foi dessa vez! A palavra é {palavraSorteada.upper()}!\n")
+            break
+    break
+
+# Mensagem final se o usuário acertar todas as letras
+if erros > 0:
+    print("Parabéns! Você acertou! :D\n")
+
+
