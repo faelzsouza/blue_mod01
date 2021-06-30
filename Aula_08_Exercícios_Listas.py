@@ -118,7 +118,7 @@ while erros > 0:
 
         # Printa a lista em forma de palavra
         for l in tracoPalavraSorteada:
-            print(l.upper(), end="")
+            print(l.upper(), end=" ")
         print("\n")
         # Quando erra as 6 vezes printa mensagem final e dá break
         if erros == 0:
